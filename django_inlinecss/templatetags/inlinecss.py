@@ -3,8 +3,14 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import django
 from django import template
-from django.utils.encoding import smart_text
+from django import template
+
+if django.VERSION < (4, 0):
+    from django.utils.encoding import smart_text
+else:
+    from django.utils.encoding import smart_str as smart_text
 
 from django_inlinecss import conf
 
